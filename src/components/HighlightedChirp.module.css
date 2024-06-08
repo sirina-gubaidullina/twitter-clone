@@ -1,0 +1,15 @@
+.selected-post-name {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0 1.5rem 0;
+}
+.like-button {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.like {
+  border: none;
+  background-color: rgb(255, 255, 255, 0);
+  cursor: pointer;
+}

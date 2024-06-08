@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  font-size: 1rem;
+  text-decoration: underline;
+}
+.btn:hover,
+.btn:active {
+  color: rgb(19, 69, 113);
+  text-decoration: underline rgb(19, 69, 113);
+}
+.window {
+  width: 40rem;
+}
+@media (max-width: 950px) {
+  .window {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+.author {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+}
+.like-button {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.like {
+  border: none;
+  background-color: rgb(255, 255, 255, 0);
+  cursor: pointer;
+}

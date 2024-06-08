@@ -1,0 +1,9 @@
+.search {
+  height: 100vh;
+  width: 20rem;
+}
+@media (max-width: 950px) {
+  .search {
+    display: none !important;
+  }
+}

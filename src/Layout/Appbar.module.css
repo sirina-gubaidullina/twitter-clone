@@ -1,0 +1,11 @@
+.nav-bar {
+  display: none !important;
+  bottom: 0;
+  top: auto !important;
+}
+
+@media (max-width: 950px) {
+  .nav-bar {
+    display: block !important;
+  }
+}

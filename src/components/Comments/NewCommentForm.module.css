@@ -1,0 +1,11 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
+}
+.comment-input {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
