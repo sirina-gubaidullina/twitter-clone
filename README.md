@@ -11,8 +11,9 @@ The Firebase Realtime Database is used to store and retrieve data.
 
 ## Features:
 
--You can view the main page, which contains all the posts.
--You can view the post individually.
+-View the main page, which contains all the posts.
+-Sorting tweets.
+-View the post individually.
 -Tweeting: you can post tweets add emojy.
 -Comments: you can post comments.
 -Responsive Design: optimized for viewing on both desktop and mobile devices.
