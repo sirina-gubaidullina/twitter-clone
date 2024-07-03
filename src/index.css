@@ -15,7 +15,11 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(86, 145, 146);
+}
 .centered {
   margin: 3rem auto;
   text-align: center;

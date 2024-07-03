@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import {
   MenuListItem,
   Button,
@@ -11,10 +12,18 @@ import {
 import { useState } from "react";
 import classes from "./Appbar.module.css";
 import LogoWindows95 from "../assets/logo95.png";
+import AuthContext from "../store/auth-context";
 
 const Appbar = () => {
   const [open, setOpen] = useState(false);
 
+  const authCtx = useContext(AuthContext);
+  const history = useHistory();
+
+  const LogoutHandler = () => {
+    authCtx.logout();
+    history.replace("/auth");
+  };
   return (
     <AppBar position="fixed" className={classes["nav-bar"]}>
       <Toolbar style={{ justifyContent: "space-between" }}>
@@ -62,16 +71,17 @@ const Appbar = () => {
                 </NavLink>
               </MenuListItem>
               <Separator />
-              <MenuListItem disabled>
-                <span role="img" aria-label="🔙">
-                  🔙
-                </span>
-                Logout
+              <MenuListItem>
+                <NavLink onClick={LogoutHandler} to="/profile">
+                  <span role="img" aria-label="🔙">
+                    🔙
+                  </span>
+                  Logout
+                </NavLink>
               </MenuListItem>
             </MenuList>
           )}
         </div>
-
         <TextInput placeholder="Search Chirper" width={150} />
       </Toolbar>
     </AppBar>

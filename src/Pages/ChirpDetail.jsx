@@ -6,6 +6,7 @@ import useHttp from "../hooks/use-http";
 import { getSinglePost } from "../lib/api";
 import { useEffect } from "react";
 import Load from "../UI/Load";
+import Layout from "../Layout/Layout";
 
 const ChirpDetail = () => {
   const match = useRouteMatch();
@@ -26,9 +27,11 @@ const ChirpDetail = () => {
 
   if (status === "pending") {
     return (
-      <Window className="window">
-        <Load />
-      </Window>
+      <Layout>
+        <Window className="window">
+          <Load />
+        </Window>
+      </Layout>
     );
   }
 
@@ -37,23 +40,29 @@ const ChirpDetail = () => {
   }
 
   if (!loadedPosts.text) {
-    return <Window className="window">No chirp found</Window>;
+    return (
+      <Layout>
+        <Window className="window">No chirp found</Window>
+      </Layout>
+    );
   }
 
   return (
-    <Window className="window">
-      <HighlightedChirp text={loadedPosts.text} date={loadedPosts.date} />
-      <Route path={match.path} exact>
-        <WindowContent>
-          <Link to={`${match.url}/comments`} className="btn">
-            Load comments
-          </Link>
-        </WindowContent>
-      </Route>
-      <Route path={`${match.path}/comments`}>
-        <Comment />
-      </Route>
-    </Window>
+    <Layout>
+      <Window className="window">
+        <HighlightedChirp text={loadedPosts.text} date={loadedPosts.date} />
+        <Route path={match.path} exact>
+          <WindowContent>
+            <Link to={`${match.url}/comments`} className="btn">
+              Load comments
+            </Link>
+          </WindowContent>
+        </Route>
+        <Route path={`${match.path}/comments`}>
+          <Comment />
+        </Route>
+      </Window>
+    </Layout>
   );
 };
 

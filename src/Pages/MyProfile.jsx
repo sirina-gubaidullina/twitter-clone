@@ -7,6 +7,7 @@ import ChirpList from "../components/ChirpList";
 import { useEffect } from "react";
 import Load from "../UI/Load";
 import NoChirp from "../components/NoChirp";
+import Layout from "../Layout/Layout";
 
 const MyProfile = () => {
   const {
@@ -21,23 +22,31 @@ const MyProfile = () => {
   }, [sendRequest]);
 
   if (error) {
-    return <Window className="window">{error}</Window>;
+    return (
+      <Layout>
+        <Window className="window">{error}</Window>;
+      </Layout>
+    );
   }
 
   if (status === "completed" && (!loadedPosts || loadedPosts.length === 0)) {
     return (
-      <Window className="window">
-        <Profile />
-        <NoChirp />
-      </Window>
+      <Layout>
+        <Window className="window">
+          <Profile />
+          <NoChirp />
+        </Window>
+      </Layout>
     );
   }
 
   return (
-    <Window className="window">
-      <Profile />
-      {status === "pending" ? <Load /> : <ChirpList chirp={loadedPosts} />}
-    </Window>
+    <Layout>
+      <Window className="window">
+        <Profile />
+        {status === "pending" ? <Load /> : <ChirpList chirp={loadedPosts} />}
+      </Window>
+    </Layout>
   );
 };
 

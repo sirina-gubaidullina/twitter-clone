@@ -27,11 +27,6 @@ const GlobalStyles = createGlobalStyle`
   body, input, select, textarea {
     font-family: 'ms_sans_serif';
   }
-  body {
-    min-height: 100vh;
-    width: 100%;
-    background-color: rgb(86, 145, 146);
-  }
 `;
 
 const Layout = (props) => {
