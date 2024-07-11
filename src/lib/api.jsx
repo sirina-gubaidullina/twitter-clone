@@ -38,6 +38,17 @@ export async function getSinglePost(postId) {
   return loadedPosts;
 }
 
+export async function deleteSinglePost(postId) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/chirp/${postId}.json`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    const data = await response.json();
+    throw new Error(data.message || "Could not delete post.");
+  }
+}
+
 export async function addPost(postData) {
   const response = await fetch(`${FIREBASE_DOMAIN}/chirp.json`, {
     method: "POST",

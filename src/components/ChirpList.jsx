@@ -2,6 +2,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import { WindowContent, Tooltip, Button, Separator } from "react95";
 import ChirpItem from "./ChirpItem";
 import SortImg from "../assets/sort.png";
+import { deleteSinglePost } from "../lib/api";
+import useHttp from "../hooks/use-http";
 
 const sortList = (post, ascending) => {
   return post.sort((postA, postB) => {
@@ -16,6 +18,17 @@ const sortList = (post, ascending) => {
 const ChirpList = (props) => {
   const history = useHistory();
   const location = useLocation();
+  const { sendRequest, status } = useHttp(deleteSinglePost);
+
+  useEffect(() => {
+    if (status === "completed") {
+      window.location.reload(true);
+    }
+  }, [status]);
+
+  const deletePostHandler = (postData) => {
+    sendRequest(postData);
+  };
 
   const queryParams = new URLSearchParams(location.search);
 
@@ -51,6 +64,7 @@ const ChirpList = (props) => {
           id={post.id}
           text={post.text}
           date={post.date}
+          onDelete={deletePostHandler}
         />
       ))}
     </WindowContent>

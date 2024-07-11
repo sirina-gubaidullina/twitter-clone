@@ -50,6 +50,7 @@ const ChirpItem = (props) => {
         <Link to={`/profile/${props.id}`} className="btn">
           More
         </Link>
+        <button onClick={() => props.onDelete(props.id)}>Delete</button>
       </WindowContent>
       <Separator />
     </>
