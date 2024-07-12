@@ -24,12 +24,20 @@ const ChirpItem = (props) => {
   return (
     <>
       <WindowContent>
-        <div className={classes.author}>
-          <Avatar square="true" size={50} src={ProfilePhoto} />
-          <div>
-            <p>Spider Man</p>
-            <p>{props.date}</p>
+        <div className={classes["post-header"]}>
+          <div className={classes["author"]}>
+            <Avatar square="true" size={50} src={ProfilePhoto} />
+            <div>
+              <p>Spider Man</p>
+              <p>{props.date}</p>
+            </div>
           </div>
+          <button
+            className={classes["delete-btn"]}
+            onClick={() => props.onDelete(props.id)}
+          >
+            Delete
+          </button>
         </div>
         <div className={classes.text}>
           <p>{props.text}</p>
