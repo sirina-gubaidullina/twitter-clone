@@ -22,6 +22,8 @@ const NewCommentForm = (props) => {
   useEffect(() => {
     if (status === "completed" && !error) {
       onAddedComment();
+      commentAuthorRef.current.value = "";
+      commentTextRef.current.value = "";
     }
   }, [status, error, onAddedComment]);
 
