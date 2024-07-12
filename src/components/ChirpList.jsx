@@ -27,7 +27,9 @@ const ChirpList = (props) => {
   }, [status]);
 
   const deletePostHandler = (postData) => {
-    sendRequest(postData);
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      sendRequest(postData);
+    }
   };
 
   const queryParams = new URLSearchParams(location.search);
