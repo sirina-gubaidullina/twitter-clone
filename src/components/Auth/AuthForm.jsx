@@ -109,7 +109,7 @@ const AuthForm = () => {
         <ThemeProvider theme={original}>
           <Window className={classes.auth}>
             <WindowHeader>{isLogin ? "login.exe" : "sign-up.exe"}</WindowHeader>
-            <form>
+            <form onSubmit={submitHandler}>
               <div>
                 <label htmlFor="email">Your Email</label>
                 <TextInput
@@ -130,7 +130,7 @@ const AuthForm = () => {
               </div>
               {!isLoading && (
                 <div className={classes.buttons}>
-                  <Button onClick={submitHandler} type="button" primary>
+                  <Button type="submit" primary>
                     {isLogin ? "Login" : "Create Account"}
                   </Button>
                   <Button type="button" onClick={switchAuthModeHandler}>
