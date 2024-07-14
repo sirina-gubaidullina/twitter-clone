@@ -42,10 +42,7 @@ const ChirpItem = (props) => {
         <div className={classes.text}>
           <p>{props.text}</p>
           <div className={classes["like-button"]}>
-            <button
-              onClick={() => addLikeHandler(true)}
-              className={classes.like}
-            >
+            <button onClick={addLikeHandler} className={classes.like}>
               <Like
                 fill={
                   activeBtn === true ? "rgb(192, 35, 35)" : "rgb(19, 69, 113)"
