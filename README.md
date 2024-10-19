@@ -14,11 +14,11 @@ Live - https://chirper-new.web.app/
 
 ## Features:
 
-- View the main page, which contains all the posts.
-- Sorting tweets.
-- View the post individually.
-- Authentication: users can sign up, log in and log out.
-- Change Password: users can update their passwords.
-- Tweeting: users can post tweets and add emojy and delete tweets.
-- Comments: users can post comments.
-- Responsive Design: optimized for viewing on both desktop and mobile devices.
+- View the main page, which contains all the posts
+- Sorting tweets
+- View posts individually
+- Authentication: users can sign up, log in and log out
+- Change Password: users can update their passwords
+- Tweeting: users can post tweets, add emojis, and delete tweets
+- Comments: users can post comments
+- Responsive Design: optimized for viewing on both desktop and mobile devices
