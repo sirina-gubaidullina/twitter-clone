@@ -6,9 +6,10 @@ The Firebase Realtime Database is used to store and retrieve data.
 
 Live - https://chirper-new.web.app/
 
-<img src="./public/desktop-design_1.jpg" />
-<img src="./public/desktop-design_2.jpg" />
-<img src="./public/desktop-design_3.jpg" />
+<img src="./public/desktop-design-1.jpg" />
+
+<img src="./public/desktop-design.gif" />
+
 <img src="./public/mobile-design.jpg" />
 
 ## Features:
@@ -16,6 +17,8 @@ Live - https://chirper-new.web.app/
 - View the main page, which contains all the posts.
 - Sorting tweets.
 - View the post individually.
-- Tweeting: you can post tweets and add emojy.
-- Comments: you can post comments.
+- Authentication: users can sign up, log in and log out.
+- Change Password: users can update their passwords.
+- Tweeting: users can post tweets and add emojy and delete tweets.
+- Comments: users can post comments.
 - Responsive Design: optimized for viewing on both desktop and mobile devices.
